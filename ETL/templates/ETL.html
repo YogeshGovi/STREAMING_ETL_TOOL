@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ETL</title>
+</head>
+<body>
+
+<form action="/Execute" method=post class=add-worker>
+
+        <h2>Source Details:</h2>
+        <select name="src_name">
+        {% for i in conn_name %}
+        <h1>{{i}}</h1>
+        <option value="{{ i[0] }}">{{ i[0] }}</option>
+        {% endfor %}
+        </select>
+        <br>
+        <br>
+        <label for="source_tbl">Source Table Name:</label><br>
+        <input type="text" id="source_tbl" name="source_tbl"><br>
+        <br><br>
+
+         <h2>Target Details:</h2>
+        <select name="tgt_name">
+        {% for j in conn_name %}
+        <h1>{{i}}</h1>
+        <option value="{{ j[0] }}">{{ j[0] }}</option>
+        {% endfor %}
+        </select>
+        <br><br>
+        <label for="target_tbl">Target Table Name:</label><br>
+        <input type="text" id="target_tbl" name="target_tbl"><br>
+        <br><br>
+
+        <input type=submit value="Execute">
+        <input type=submit value="Cancel">
+
+</form>
+
+</body>
+</html>
